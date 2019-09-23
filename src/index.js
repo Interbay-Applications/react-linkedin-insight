@@ -11,6 +11,7 @@ class LinkedInTag {
   constructor() {
     this.initialized = false;
     this.disabled = false;
+    this.subdomain = null;
   }
 
   /**
@@ -36,11 +37,12 @@ class LinkedInTag {
    *
    * @return null
    */
-  init(partnerId, disabled = !isBrowser) {
+  init(partnerId, subdomain = "dc", disabled = !isBrowser) {
     this.disabled = disabled;
     if (this.disabled) {
       return;
     }
+    this.subdomain = subdomain;
     window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
     window._linkedin_data_partner_ids.push(partnerId);
 
@@ -72,7 +74,7 @@ class LinkedInTag {
     }
 
     partnerId = partnerId || window._linkedin_data_partner_ids[0];
-    const url = `https://dc.ads.linkedin.com/collect/?pid=${partnerId}&conversionId=${conversionId}&fmt=gif`;
+    const url = `https://${this.subdomain}.ads.linkedin.com/collect/?pid=${partnerId}&conversionId=${conversionId}&fmt=gif`;
 
     // It creates an element without actually posting it to the page. The call is already made to the linkedin servers and will be registered
     const element = document.createElement('img');
