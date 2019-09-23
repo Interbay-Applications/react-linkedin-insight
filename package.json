@@ -1,6 +1,6 @@
 {
   "name": "react-linkedin-insight",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Easily add LinkedIn Insight Tag to React",
   "main": "./dist/linkedin-insight.js",
   "files": [
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jelleklaver/react-linkedin-insight.git"
+    "url": "git+https://github.com/Interbay-Applications/react-linkedin-insight.git"
   },
   "keywords": [
     "react",
